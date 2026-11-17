@@ -6,6 +6,8 @@ import { readFileSync } from "node:fs";
 import { config } from "./config.js";
 import authRouter from "./routes/authRoutes.js";
 import testRouter from "./routes/testRoutes.js";
+import movieRouter from "./routes/movieRoutes.js";
+
 
 const app = express();
 
@@ -14,6 +16,7 @@ app.use(cors({ origin: "http://localhost:5173" }));
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/test", testRouter);
+app.use("/api/v1/movies", movieRouter);
 
 const swaggerFile = JSON.parse(readFileSync("./swagger-output.json", "utf-8"));
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
