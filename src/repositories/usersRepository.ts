@@ -1,7 +1,10 @@
 
 // Lista temporal para almacenar usuarios registrados
+
+import { Usuario } from "../types/user.js";
+
 // Esto en producción va a cambiar porque NUNCA SE DEBEN DE ALMACENAR CONTRASEÑAS EN TEXTO PLANO
-const users = [
+const users: Usuario[] = [
   {
     id: 1,
     email: "felipe@example.com",
@@ -28,7 +31,7 @@ const users = [
   }
 ];
 
-export const obtenerUsuarioPorEmailYContrasena = async (email, password) => {
+export const obtenerUsuarioPorEmailYContrasena = async (email: string, password: string): Promise<Usuario | undefined> => {
   return users.find(
     (u) => u.email === email && u.contraseña === password
   );
