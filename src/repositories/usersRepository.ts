@@ -4,7 +4,7 @@
 import { Usuario } from "../types/user.js";
 
 // Esto en producción va a cambiar porque NUNCA SE DEBEN DE ALMACENAR CONTRASEÑAS EN TEXTO PLANO
-const users: Usuario[] = [
+export const users: Usuario[] = [
   {
     id: 1,
     email: "felipe@example.com",
